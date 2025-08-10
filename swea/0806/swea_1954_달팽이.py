@@ -12,11 +12,11 @@ for tc in range(1, T+1):
     dir = 0
     
     for number in range(1, N*N+1):
-        # 범위를 벗어나지 않았을 경우 or 만난 숫자가 0일 경우
         snail[r][c] = number
         nr = r + dr[dir]
         nc = c + dc[dir]
 
+        # 범위를 벗어나지 않았을 경우 or 만난 숫자가 0일 경우
         if (0 <= nr < N and 0<= nc < N) and snail[nr][nc] == 0:
             r = nr
             c = nc

@@ -27,3 +27,21 @@
 
 # 2번째 풀이
 # while 문 사용 -> 종료 조건 : 종점에 도착할 때까지
+T = int(input())
+for tc in range(1, T+1):
+    k, n, m = map(int, input().split())
+    station = list(map(int, input().split()))
+    station.append(n)
+ 
+    position = 0
+    count = 0
+    while position + k < n:
+     
+        reachable = [i for i in station if position< i < position+k+1]
+        if not reachable:
+            count = 0
+            break          
+        position = max(reachable)
+        count += 1
+ 
+    print(f"#{tc} {count}")

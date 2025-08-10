@@ -29,7 +29,7 @@ for tc in range(1, T+1):
             # 다음 방향 후보
             next_dir = search_dir[dir][i]
             next_r = r + dr[next_dir]
-            next_c = c + dr[next_dir]
+            next_c = c + dc[next_dir]
 
             # r 좌표의 범위를 고민할 필요 없음
             if 0 <= next_c < 100 and ladder[next_r][next_c] == 1:

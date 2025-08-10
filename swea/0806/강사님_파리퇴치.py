@@ -13,4 +13,6 @@ for tc in range(1, T+1):
                     temp_sum += flies[r+i][c+i] # 시작점으로부터 i,j만큼 떨어짐
             
             answer = max(answer, temp_sum)
+    
+    print(f'#{tc} {answer}')
             
