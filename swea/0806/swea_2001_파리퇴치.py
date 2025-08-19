@@ -14,3 +14,4 @@ for tc in range(1, T+1):
             max_value = max(max_value, max_sum)
                     
     print(f'#{tc} {max_value}')
+    
