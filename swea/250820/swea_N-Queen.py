@@ -1,6 +1,7 @@
 T = int(input())
 
 def n_queen(row):
+    global answer
     if row == N:
         answer += 1
         return
@@ -30,4 +31,4 @@ for tc in range(1, T+1):
 
     n_queen(0)
 
-    print(f'{tc} {answer}')
+    print(f'#{tc} {answer}')
