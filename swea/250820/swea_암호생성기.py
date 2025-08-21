@@ -25,34 +25,46 @@
 #     print(f'#{tc}', *dq)
 
 
-from collections import deque
+# from collections import deque
+
+# T = 10
+
+# for _ in range(1, T+1):
+#     tc = int(input())
+#     q = deque(map(int, input().split()))
+    
+#     count = 1
+    
+#     while q[7] > 0:
+#         a = q.popleft()
+#         if a - count <= 0:
+#             q.append(0)
+#             break
+#         else:
+#             q.append(a - count)
+
+#         count = (count) % 5 + 1
+ 
+ 
+#     print (f'#{tc}',*q)
 
 T = 10
 
 for _ in range(1, T+1):
     tc = int(input())
-    q = deque(map(int, input().split()))
-    
+    que = list(map(int, input().split()))
+
     count = 1
-    
-    while q[7] > 0:
-        a = q.popleft()
-        if a - count <= 0:
-            q.append(0)
+
+    while True:
+        a = que.pop(0)
+        val = a - count
+
+        if val <= 0:
+            que.append(0)
             break
         else:
-            q.append(a - count)
-
-        count = (count) % 5 + 1
- 
- 
-    print (f'#{tc}',*q)
-
-
-
-
-
-
-
-
-
+            que.append(val)
+        
+        count = count % 5 + 1
+    print(f'#{tc}', *que)

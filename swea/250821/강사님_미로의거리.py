@@ -8,7 +8,7 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     graph = []
-    answer = -1 # 거리 초기값 설정을 잘 해야함 
+    ans = -1 # 거리 초기값 설정을 잘 해야함 
 
     s_r, s_c = -1, -1 # 시작 지점 찾기(없는 값으로)
     for r in range(N): # 행 위치 찾기
@@ -30,7 +30,7 @@ for tc in range(1, T+1):
 
     while q: # q가 빌 때까지 반복
         
-        answer += 1 # 
+        ans += 1 # 
         
         for _ in range(len(q)):
             r, c = q.popleft()
@@ -64,6 +64,6 @@ for tc in range(1, T+1):
             break
 
     if not flag:
-        answer = 0
+        ans = 0
     
-    print(f'#{tc} {answer}')
+    print(f'#{tc} {ans}')
