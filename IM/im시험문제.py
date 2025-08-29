@@ -25,5 +25,4 @@ for tc in range(1, T+1):
     fin = sum(minus)
     count += fin
 
-
     print(f'#{tc} {count}')

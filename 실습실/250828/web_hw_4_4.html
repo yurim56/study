@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>소셜 커머스 페이지</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* 상단 주목 상품(좌측 작은 썸네일) */
+    .featured-thumb {
+      width: 120px; height: 120px; object-fit: cover; border-radius: .5rem;
+    }
+
+    /* 하단 섹션: 좌측 정렬 카드(이미지 위, 텍스트 아래) */
+    .product { max-width: 320px; margin: 0 0 2.25rem 0; }
+    .product-img { width: 220px; height: 220px; object-fit: cover; border-radius: .5rem; display: block; }
+    .product h6 { margin: .75rem 0 .25rem; font-weight: 600; }
+    .product p { margin: 0; color: #6c757d; }
+
+    .section-title { margin: 2.75rem 0 1.25rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+<div class="container my-5">
+
+  <!-- 상단: 주목 상품(9칸@lg) + 카테고리(3칸@lg, <lg 숨김) -->
+  <div class="row g-4">
+    <!-- 주목 상품 -->
+    <div class="col-12 col-lg-9">
+      <h2 class="mb-3 section-title">주목 상품</h2>
+
+      <!-- 항목 1 -->
+      <div class="mb-4 text-start">
+        <img src="product1.jpg" alt="상품 1" class="img-fluid featured-thumb mb-2">
+        <h5 class="mb-1">상품 1</h5>
+        <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+
+      <!-- 항목 2 -->
+      <div class="mb-4 text-start">
+        <img src="product2.jpg" alt="상품 2" class="img-fluid featured-thumb mb-2">
+        <h5 class="mb-1">상품 2</h5>
+        <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+
+      <!-- 항목 3 -->
+      <div class="mb-4 text-start">
+        <img src="product3.jpg" alt="상품 3" class="img-fluid featured-thumb mb-2">
+        <h5 class="mb-1">상품 3</h5>
+        <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+    </div>
+
+
+    <!-- 카테고리: <992px 숨김, ≥992px 3칸 -->
+    <aside class="col-lg-3 d-none d-lg-block">
+      <h2 class="mb-3 section-title">카테고리</h2>
+      <ul class="list-group">
+        <li class="list-group-item">카테고리 1</li>
+        <li class="list-group-item">카테고리 2</li>
+        <li class="list-group-item">카테고리 3</li>
+        <li class="list-group-item">카테고리 4</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- 하단: 3개 섹션 (각 열에 2개 상품씩, 좌측 정렬) -->
+  <div class="row g-4 section-title">
+    <!-- 인기 상품 -->
+    <div class="col-12 col-md-10 offset-md-2 col-lg-4 offset-lg-0">
+      <h2 class="mb-3">인기 상품</h2>
+      <div class="product">
+        <img src="product4.jpg" alt="상품 4" class="product-img">
+        <h6>상품 4</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+      <div class="product">
+        <img src="product5.jpg" alt="상품 5" class="product-img">
+        <h6>상품 5</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+    </div>
+
+    <!-- 신상품 -->
+    <div class="col-12 col-md-10 offset-md-2 col-lg-4 offset-lg-0">
+      <h2 class="mb-3">신상품</h2>
+      <div class="product">
+        <img src="product6.jpg" alt="상품 6" class="product-img">
+        <h6>상품 6</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+      <div class="product">
+        <img src="product7.jpg" alt="상품 7" class="product-img">
+        <h6>상품 7</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+    </div>
+
+    <!-- 특별 할인 -->
+    <div class="col-12 col-md-10 offset-md-2 col-lg-4 offset-lg-0">
+      <h2 class="mb-3">특별 할인</h2>
+      <div class="product">
+        <img src="product8.jpg" alt="상품 8" class="product-img">
+        <h6>상품 8</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+      <div class="product">
+        <img src="product9.jpg" alt="상품 9" class="product-img">
+        <h6>상품 9</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
