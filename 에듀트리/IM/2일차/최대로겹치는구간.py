@@ -1,14 +1,21 @@
 N = int(input())
 
-lines = [tuple(map(int, input().split())) for _ in range(N)]    
+events = []
+for _ in range(N):
+    start, end = map(int, input().split())
+    if start > end:
+        start, end = end, start
+    
+    events.append((start, 1))
+    events.append((end, -1))
 
-max_end = 0
-for start, end in lines:
-    max_end = max(max_end, start, end)
+events.sort(key=lambda x: (x[0], -x[1]))
 
-count = [0] * (max_end+1)
-for start, end in lines:
-    for i in range(start, end+1):
-        count[i] += 1
+cur = ans = 0
 
-print(max(count))
+for _, d in events:
+    cur += d
+    if cur > ans:
+        ans = cur
+
+print(ans)
