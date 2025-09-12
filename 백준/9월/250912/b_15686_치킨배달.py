@@ -1,8 +1,5 @@
 from itertools import combinations
 
-dr = [-1, 1, 0, 0]
-dc = [0, 0, -1, 1]
-
 N, M = map(int, input().split())
 
 graph = [[0]*N for _ in range(N)]

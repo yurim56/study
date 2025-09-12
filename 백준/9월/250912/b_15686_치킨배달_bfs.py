@@ -1,8 +1,42 @@
 from itertools import combinations
+from collections import deque
 
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
+def bfs():
+    que = deque()
+    
+    visited = [[2*(N-1)+1]*N for _ in range(N)]    
+    
+    # 시작점 큐에 추가
+    for store_idx in store_idx_set:
+        r, c = store_rcs[store_idx]
+        visited[r][c] = 0
+        que.append((r, c))
+    
+    while que:
+        r, c = que.popleft()
+        
+        for dir in range(4):
+            nr = r + dr[dir]
+            nc = c + dc[dir]
+            
+            if nr < 0 or nr >= N or nc < 0 or nc >= N:
+                continue
+            
+            if visited[nr][nc] <= visited[r][c] + 1:
+                continue
+            
+            visited[nr][nc] = visited[r][c] + 1
+            que.append((nr, nc))
+    
+    distance = 0
+    for r, c in home_rcs:
+        visited[r][c]
+    
+    return distance
+        
 N, M = map(int, input().split())
 
 graph = [[0]*N for _ in range(N)]
@@ -22,26 +56,8 @@ for r in range(N):
             
         elif graph[r][c] == 2:
             store_rcs.append((r, c))
-        
-# 열의 수가 store 수
-distance = [[0]*len(store_rcs) for _ in range(len(home_rcs))]
 
-for home_idx in range(len(home_rcs)):
-    for store_idx in range(len(store_rcs)):
-        
-        distance[home_idx][store_idx] = abs(home_rcs[home_idx][0] - store_rcs[store_idx][0]) + abs(home_rcs[home_idx][1] - store_rcs[store_idx][1])
-
-
-for store_idx_set in combinations(range(len(store_rcs)), M):
-    
-    distance = 0
-    for home_idx in range(len(home_rcs)):
-        min_distance = 2(N*-1) # 가장 왼쪽 위 ~ 오른쪽 아래의 거리 (N-1)*(N-1)
-        for store_idx in store_idx_set:
-            min_distance = min(min_distance, distance[home_idx][store_idx])
-        
-        distance += min_distance
-    
-    answer = min(answer, distance)
+for store_idx_set in combinations(range(len(store_rcs)), M):  
+    answer = min(answer, bfs())
 
 print(answer)
