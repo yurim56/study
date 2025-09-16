@@ -91,7 +91,6 @@ def subset(count, idx):
         print('부분 집합 :', picked)
         answer += 1
     
-    
     for i in range(idx, len(numbers)):
         picked.append(numbers[i])
         subset(count + 1, i + 1)

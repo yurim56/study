@@ -23,3 +23,19 @@ def subset(idx):
 subset(0)
 print('경우의 수:', count)
 
+pick = []
+answer = 0
+def subset2(count, idx):
+    global answer
+    if count >= 2:
+        print(pick)
+        answer += 1
+       
+    for i in range(idx, len(friends)):
+        pick.append(friends[i])
+        subset2(count + 1, i + 1)
+        pick.pop()
+
+subset2(0, 0)
+print('경우의 수:', answer)
+
