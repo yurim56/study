@@ -9,7 +9,6 @@ def synergy(team):
             total += (arr[i][j] + arr[j][i])
     return total
 
-# N개 중에 2개 뽑기
 def recur(count, start):
     global answer
     if count == N // 2:
@@ -38,54 +37,53 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     arr = [list(map(int, input().split())) for _ in range(N)]
-    
-    answer = float('inf')
     visited = [0] * N
+    
+    answer = 21e8
     pick = []
 
     # 0번을 팀 A에 고정해서 대칭 줄이기
     visited[0] = 1
     pick.append(0)
-
     
     recur(1, 1)
     print(f'#{tc} {answer}')
 
 
-from itertools import combinations
-import sys
-input = sys.stdin.readline
+# from itertools import combinations
+# import sys
+# input = sys.stdin.readline
 
-def synergy(team, arr):
-    s = 0
-    for i, j in combinations(team, 2):
-        s += arr[i][j] + arr[j][i]
+# def synergy(team, arr):
+#     s = 0
+#     for i, j in combinations(team, 2):
+#         s += arr[i][j] + arr[j][i]
     
-    return s
+#     return s
 
-T = int(input())
+# T = int(input())
 
-for tc in range(1, T+1):
-    N = int(input())
-    arr = [list(map(int, input().split())) for _ in range(N)]
+# for tc in range(1, T+1):
+#     N = int(input())
+#     arr = [list(map(int, input().split())) for _ in range(N)]
 
-    answer = float('inf')
-    indices = list(range(N))
+#     answer = float('inf')
+#     indices = list(range(N))
 
-    for teamA in combinations(indices[1:], N//2 - 1):
-        teamA = (0, ) + teamA
-        teamB = []
-        for i in indices:
-            if i not in teamA:
-                teamB.append(i)
-        teamB = tuple(teamB)
+#     for teamA in combinations(indices[1:], N//2 - 1):
+#         teamA = (0, ) + teamA
+#         teamB = []
+#         for i in indices:
+#             if i not in teamA:
+#                 teamB.append(i)
+#         teamB = tuple(teamB)
 
-        a = synergy(teamA, arr)
-        b = synergy(teamB, arr)
+#         a = synergy(teamA, arr)
+#         b = synergy(teamB, arr)
 
-        diff = abs(a-b)
+#         diff = abs(a-b)
 
-        if diff < answer:
-            answer = diff
+#         if diff < answer:
+#             answer = diff
     
-    print(f'#{tc} {answer}')
+#     print(f'#{tc} {answer}')

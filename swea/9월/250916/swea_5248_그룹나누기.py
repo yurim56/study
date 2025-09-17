@@ -110,7 +110,7 @@ def dfs(node):
     for next in adj_list[node]:
         if visited[node] == 1:
             continue
-        visited[next] = 1
+        visited[node] = 1
         dfs(next)
         
 T = int(input())
